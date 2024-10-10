@@ -31,3 +31,36 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Archivos generados por el IDE
+.idea/
+.vscode/
+*.iml
+
+# Directorios de compilación de Maven/Gradle
+/target/
+/out/
+
+# Dependencias descargadas por Maven
+/mvnw/
+/mvnw.cmd
+/.mvn/
+
+# Archivos de configuración locales
+application.properties
+application.yml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos de configuración de Git
+.git/
+.gitignore
+
+# Archivos de entornos locales
+*.env
+
