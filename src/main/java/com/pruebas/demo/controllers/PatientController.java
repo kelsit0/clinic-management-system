@@ -25,4 +25,13 @@ public class PatientController {
         return patientService.createPatient(patient);
     }
 
+    @DeleteMapping("/{id}")
+    public void deletePatient(@PathVariable Long id){
+        patientService.deletePatient(id);
+    }
+
+    @PutMapping("/{id}")
+    public PatientEntity updatePatient(@PathVariable Long id,@RequestBody PatientEntity p){
+        return  patientService.updatePatient(id,p);
+    }
 }
