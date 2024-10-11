@@ -15,12 +15,18 @@ public class PatientController {
     @Autowired
     private PatientService patientService;
 
-    @GetMapping()
+    @GetMapping("/{id}")
+    public PatientEntity getPatient(@PathVariable Long id){
+        return patientService.getPatient(id);
+    }
+
+
+    @GetMapping("/getAll")
     public List<PatientEntity> getPatients(){
         return patientService.getAllPatients();
     }
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public PatientEntity createPatient(@RequestBody PatientEntity patient){
         return patientService.createPatient(patient);
     }

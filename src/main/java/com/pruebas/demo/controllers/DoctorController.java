@@ -16,7 +16,12 @@ public class DoctorController {
     @Autowired
     private DoctorService doctorService;
 
-    @GetMapping
+    @GetMapping("/{id}")
+    public DoctorEntity getDoctorById(@PathVariable Long id){
+        return doctorService.getDoctor(id);
+    }
+
+    @GetMapping("/getAll")
     public List<DoctorEntity> getDoctors(){
         return doctorService.getAll();
     }
@@ -25,6 +30,16 @@ public class DoctorController {
     @PostMapping("/create")
     public DoctorEntity root(@RequestBody DoctorEntity d){
         return doctorService.createDoctor(d);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        doctorService.deleteDoctor(id);
+    }
+
+    @PutMapping("/{id}")
+    public DoctorEntity update(@PathVariable Long id, @RequestBody DoctorEntity d){
+        return doctorService.updateDoctor(id, d);
     }
 
 }

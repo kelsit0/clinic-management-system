@@ -15,6 +15,13 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
+    public PatientEntity getPatient(Long id){
+        if(!patientRepository.existsById(id)){
+            throw new ResourceNotFoundException("Patient not found");
+        }
+        return patientRepository.findById(id).get();
+    }
+
     public List<PatientEntity> getAllPatients() {
         return patientRepository.findAll();
     }
