@@ -11,4 +11,6 @@ import java.util.List;
 public interface PatientRepository extends CrudRepository<PatientEntity, Long> {
     @Override
     List<PatientEntity> findAll();
+
+    PatientEntity findByName(String name);
 }
