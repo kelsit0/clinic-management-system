@@ -13,4 +13,6 @@ public interface PatientRepository extends CrudRepository<PatientEntity, Long> {
     List<PatientEntity> findAll();
 
     PatientEntity findByName(String name);
+
+
 }
