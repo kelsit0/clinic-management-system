@@ -49,5 +49,12 @@ public class PatientService {
 
     }
 
+    public PatientEntity findByName(String name){
+        PatientEntity patient = patientRepository.findByName(name);
+        if(patient==null){
+            throw new ResourceNotFoundException("Patient not found");
+        }
+        return patient;
+    }
 
 }
